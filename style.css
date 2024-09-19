@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell.activeX::before {
+    content: "X";
+    color: #ff0000;
+}
+
+.cell.activeO::before {
+    content: "O";
+    color: #035e26;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00fd6e;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 500px) {
+    .board {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .cell {
+        font-size: 1.5em;
+    }
+}
